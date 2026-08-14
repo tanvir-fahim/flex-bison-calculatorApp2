@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Bison Calculator Compiler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <div class="header">
+        <div class="name">Flex Bison Calculator <span>Compiler</span></div>
+        <div class="files">cal.l · cal.y</div>
+    </div>
+
+    <!-- Functions Toolbar -->
+    <div class="toolbar">
+        <button onclick="insert('sin(')">sin</button>
+        <button onclick="insert('cos(')">cos</button>
+        <button onclick="insert('tan(')">tan</button>
+        <button onclick="insert('cot(')">cot</button>
+        <button onclick="insert('sec(')">sec</button>
+        <button onclick="insert('cosec(')">cosec</button>
+        <button onclick="insert('asin(')">asin</button>
+        <button onclick="insert('acos(')">acos</button>
+        <button onclick="insert('atan(')">atan</button>
+        <button onclick="insert('sqrt(')">sqrt</button>
+        <button onclick="insert('exp(')">exp</button>
+        <button onclick="insert('log(')">log</button>
+        <button onclick="insert('ln(')">ln</button>
+        <button onclick="insert('^')">x^y</button>
+        <button onclick="insert('!')">x!</button>
+        <button onclick="insert('%')">%</button>
+        <button onclick="insert('pi')">pi</button>
+        <button onclick="insert('e')">e</button>
+        <button onclick="clearAll()">clear</button>
+    </div>
+
+    <!-- Operators Toolbar -->
+    <div class="toolbar">
+        <button onclick="insert('(')">(</button>
+        <button onclick="insert(')')">)</button>
+        <button onclick="insert('+')">+</button>
+        <button onclick="insert('-')">&minus;</button>
+        <button onclick="insert('*')">&times;</button>
+        <button onclick="insert('/')">&divide;</button>
+        <button onclick="backspace()">&#9003;</button>
+    </div>
+
+    <!-- Code Editor -->
+    <div class="editor">
+        <div class="gutter">1</div>
+        <textarea
+            id="expression"
+            placeholder="sin(30) * 2 + sqrt(16)"
+            autocomplete="off"
+            spellcheck="false"
+            rows="3"
+        ></textarea>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="runbar">
+        <div class="hint">ctrl/cmd + enter to run</div>
+        <button class="run" onclick="compile()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Compile &amp; run
+        </button>
+    </div>
+
+    <!-- Console Output -->
+    <div class="console" id="console">
+        <div class="row empty">waiting for input...</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
