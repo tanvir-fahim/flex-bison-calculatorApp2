@@ -18,7 +18,8 @@ A full-stack, browser-based scientific calculator powered by a custom compiler b
 
 ## 📁 Project Architecture
 
-```Calculator
+```
+Claculator
 ├── cal.l          # Flex lexical analyzer rules
 ├── cal.y          # Bison grammar rules & AST evaluation
 ├── server.py      # Python HTTP backend (compiles C code & handles API requests)
